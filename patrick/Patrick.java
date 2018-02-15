@@ -28,7 +28,7 @@ public class Patrick implements Updateable
 	// Updates this object.
 	public void update()
 	{
-		if (spongebob.readyToRumble)
+		if (spongebob.readyToRumble())
 			System.out.println(ANNOUNCEMENT);
 	}
 }
