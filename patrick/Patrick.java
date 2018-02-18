@@ -19,16 +19,19 @@ public class Patrick implements Updateable
 	// Spongebob to watch for readiness to rumble
 	private Spongebob spongebob;
 
-	// Constructs a Patrick who listens to a Spongebob.
-	public Patrick(Spongebob spongebob)
-	{
-		this.spongebob = spongebob;
-	}
-
 	// Updates this object.
 	public void update()
 	{
+		if (spongebob == null)
+			return;
+
 		if (spongebob.readyToRumble())
 			System.out.println(ANNOUNCEMENT);
+	}
+
+	// Sets the Spongebob that this object communicates with.
+	public void registerSpongebob(Spongebob spongebob)
+	{
+		this.spongebob = spongebob;
 	}
 }

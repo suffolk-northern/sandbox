@@ -4,8 +4,10 @@
  * Demonstration of basic Updater.
  */
 
+import mbo.MBO;
 import patrick.Patrick;
 import spongebob.Spongebob;
+import train_model.Train;
 import updater.Updateable;
 import updater.Updater;
 
@@ -14,11 +16,22 @@ public class TestyTest
 	public static void main(String[] args)
 	{
 		Spongebob spongebob = new Spongebob();
-		Patrick patrick = new Patrick(spongebob);
+		Patrick patrick = new Patrick();
+		Train train0 = new Train();
+		Train train1 = new Train();
+		MBO mbo = new MBO();
 
-		Updateable[] objects = new Updateable[2];
-		objects[0] = spongebob;
-		objects[1] = patrick;
+		patrick.registerSpongebob(spongebob);
+		mbo.registerTrain(train0);
+		mbo.registerTrain(train1);
+
+		Updateable[] objects = {
+			spongebob,
+			patrick,
+			train0,
+			train1,
+			mbo
+		};
 
 		Updater updater = new Updater(objects);
 
