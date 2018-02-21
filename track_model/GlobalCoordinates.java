@@ -90,6 +90,34 @@ public class GlobalCoordinates
 		return radius * ahav(term1 + term2);
 	}
 
+	// Returns the distance between this longitude and the longitude of
+	// another point.
+	//
+	// Return value is yards.
+	public double xDistanceTo(GlobalCoordinates other)
+	{
+		GlobalCoordinates otherX = new GlobalCoordinates(
+			this.latitude(),
+			other.longitude()
+		);
+
+		return distanceTo(otherX);
+	}
+
+	// Returns the distance between this latitude and the latitude of
+	// another point.
+	//
+	// Return value is yards.
+	public double yDistanceTo(GlobalCoordinates other)
+	{
+		GlobalCoordinates otherY = new GlobalCoordinates(
+			other.latitude(),
+			this.longitude()
+		);
+
+		return distanceTo(otherY);
+	}
+
 	// Adds latitude and longitude components in degrees to this set of
 	// coordinates.
 	//
