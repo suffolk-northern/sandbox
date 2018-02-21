@@ -69,6 +69,8 @@ public class GlobalCoordinates
 	//
 	// Great-circle distance is the shortest "straight-line" distance
 	// across the surface of a sphere.
+	//
+	// Return value is yards.
 	public double distanceTo(GlobalCoordinates other)
 	{
 		// Wikipedia article "Great-circle distance" says haversine is
